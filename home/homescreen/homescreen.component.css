@@ -1,0 +1,64 @@
+nav {
+    background-color: #092a35;
+    height: 55px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+	
+
+
+}
+
+html,
+body {
+
+    height: 100%;
+	
+   
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.banner-image {
+    background-image: url("/assets/Images/home.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2 {
+	color: #142d4c;
+	font-size: 26px , solid 60px;
+	font-weight: 300;
+	text-align: center;
+	position: relative;
+	margin: 40px 70px;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	
+}
+h2::after {
+	content: "";
+	width: 100%;
+	position: absolute;
+	margin: 0 auto;
+	height: 1px;
+	border-radius: 1px;
+	background: #38598b;
+	left: 0;
+	right: 0;
+	bottom: 14px;
+}
+h2 span {
+	display: inline-block;
+	padding: 0 25px;
+	background: #38598b;
+	position:relative;
+	z-index:2;
+	
+}
