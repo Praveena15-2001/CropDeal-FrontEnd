@@ -1,0 +1,150 @@
+
+<div class="header">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">CROP DEAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+             <div class="mx-auto"></div>
+                <ul class="navbar-nav">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link text-white" role="button" (click)="navigate()">DashBoard</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" [routerLink]="['/dealer/viewdealer',dealerName]">View Profile</a>
+                    </li>
+                    
+                   
+                 </ul>
+            </div>
+        </div>
+    </nav>
+    
+  </div>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Update Dealer Form </h3>
+
+                        <form [formGroup]="updateForm">
+
+
+
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="form-group">
+                                        <label>Dealer Name</label>
+                                        <input type="text" formControlName="dealerName" class="form-control" readonly>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Dealer Image</label>
+                                        <input type="text" class="form-control" formControlName="dealerimg">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Contact</label>
+                                        <input type="text" formControlName="dealerContact" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Dealer About</label>
+                                        <input type="text" class="form-control" formControlName="dealerabout">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+                            <h5>Address</h5><br>
+
+
+                            <div formGroupName="address">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>House No</label>
+                                            <input type="text" class="form-control" formControlName="houseno">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Street Name</label>
+                                            <input type="text" class="form-control" formControlName="streetname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input type="text" class="form-control" formControlName="city">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>District</label>
+                                            <input type="text" class="form-control" formControlName="district">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>State</label>
+                                            <input type="text" class="form-control" formControlName="state">
+                                        </div>
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>PinCode</label>
+                                            <input type="text" class="form-control" formControlName="pincode">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><br>
+
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Dealer Email</label>
+                                        <input type="email" class="form-control" formControlName="dealerEmail">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Dealer About</label>
+                                        <input type="text" class="form-control" formControlName="dealerabout">
+                                    </div>
+                                </div>
+                            </div><br>
+
+                            <button class="btn btn-primary" (click)="update()" type="submit">Update</button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
