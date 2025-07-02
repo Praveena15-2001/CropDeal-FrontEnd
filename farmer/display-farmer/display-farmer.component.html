@@ -1,0 +1,84 @@
+
+<div class="header">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">CROP DEAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+             <div class="mx-auto"></div>
+                <ul class="navbar-nav">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" role="button" (click)="navigate()">DashBoard</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" [routerLink]="['/farmer/updatefarmer',farmerName]">Update Profile</a>
+                    </li>
+                  
+                   
+                 </ul>
+            </div>
+        </div>
+    </nav>
+    
+  </div>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"> Farmer Details </h3>
+
+                        <form>
+                            <div class="col">
+                                <div class="form-group">
+                                    <img style="padding-left: 50px;" img [src]="fdetails.farmerImg" alt="">
+                                </div>
+                            </div>
+                            
+                                <div class="col">
+                                    <div class="form-group">
+                                       <h5>Name: {{fdetails.farmerName}}</h5>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <h5>Contact: {{fdetails.farmerContact}}</h5>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <h5>Email Address: {{fdetails.farmerEmail}}</h5>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <h5>Address: {{fdetails.address.houseno}},<br>{{fdetails.address.streetname}},<br>{{fdetails.address.city}}-{{fdetails.address.pincode}}.</h5>
+                                    </div>
+                                </div>
+
+
+                            
+
+                            
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

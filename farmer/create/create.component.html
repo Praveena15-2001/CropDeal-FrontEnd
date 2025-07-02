@@ -1,0 +1,194 @@
+
+<div class="header">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">CROP DEAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+             <div class="mx-auto"></div>
+                <ul class="navbar-nav">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white" [routerLink]="['/admin',userName]">DashBoard</a>
+                    </li>
+                    
+                   
+                    <li class="nav-item">
+                        <a class="nav-link text-white" routerLink="/farmer/allfarmers">View Farmer</a>
+                    </li>
+                   
+                 </ul>
+            </div>
+        </div>
+    </nav>
+    
+  </div>
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+
+                        <form [formGroup]="creationForm" #myForm="ngForm">
+
+                                             {{msg}}
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Farmer Name</label>
+                                        <input type="text" [class.is-invalid]="farmerName.invalid && farmerName.touched"
+                                            formControlName="farmerName" class="form-control">
+                                        <div *ngIf="farmerName.invalid &&  farmerName.touched">
+                                            <small *ngIf="farmerName!.errors!['required']" class="text-danger">Farmer
+                                                Name is required</small>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Contact</label>
+                                        <input type="text"
+                                            [class.is-invalid]="farmerContact.invalid && farmerContact.touched"
+                                            formControlName="farmerContact" class="form-control">
+                                        <div *ngIf="farmerContact.invalid &&  farmerContact.touched">
+                                            <small *ngIf="farmerContact!.errors!['required']" class="text-danger">Farmer
+                                                Contact is required</small>
+                                            <small *ngIf="farmerContact!.errors!['pattern']" class="text-danger">please
+                                                provide valid Contact!</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <br>
+                            <h5>Address</h5><br>
+
+
+                            <div formGroupName="address">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>House No</label>
+                                            <input type="text" class="form-control" formControlName="houseno">
+                                            <div *ngIf="houseno.invalid && houseno.touched">
+                                                <small *ngIf="houseno!.errors!['required']" class="text-danger">
+                                                    HouseNo is required</small>
+                                                <small *ngIf="houseno!.errors!['pattern']" class="text-danger">please
+                                                    provide valid HouseNo!</small>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Street Name</label>
+                                            <input type="text" class="form-control" formControlName="streetname">
+                                            <div *ngIf="streetname.invalid && streetname.touched">
+                                                <small *ngIf="streetname!.errors!['required']" class="text-danger">
+                                                    Street Name is required</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input type="text" class="form-control" formControlName="city">
+                                            <div *ngIf="city.invalid && city.touched">
+                                                <small *ngIf="city!.errors!['required']" class="text-danger">
+                                                    City is required</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>District</label>
+                                            <input type="text" class="form-control" formControlName="district">
+                                            <div *ngIf="district.invalid && district.touched">
+                                                <small *ngIf="district!.errors!['required']" class="text-danger">
+                                                    District is required</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>State</label>
+                                            <input type="text" class="form-control" formControlName="state">
+                                            <div *ngIf="state.invalid && state.touched">
+                                                <small *ngIf="state!.errors!['required']" class="text-danger">
+                                                    State is required</small>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>PinCode</label>
+                                            <input type="text" class="form-control" formControlName="pincode">
+                                            <div *ngIf="pincode.invalid && pincode.touched">
+                                                <small *ngIf="pincode!.errors!['required']" class="text-danger">Pincode
+                                                    is required</small>
+                                                <!-- <small *ngIf="pincode!.errors!['pattern']" class="text-danger">please
+                                                    provide valid Pincode!</small> -->
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><br>
+
+                            <div class="form-group">
+                                <label>Farmer Email</label>
+                                <input type="email" class="form-control" formControlName="farmerEmail">
+                                <div *ngIf="farmerEmail.invalid && farmerEmail.touched">
+                                    <small *ngIf="farmerEmail!.errors!['pattern']" class="text-danger">please
+                                        provide valid Email!</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Farmer Image</label>
+                                <input type="text" class="form-control" formControlName="farmerImg">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>Farmer About</label>
+                                <input type="textarea" class="form-control" formControlName="farmerAbout">
+                            </div><br>
+
+                            <button class="btn btn-primary" (click)="create()" type="submit"
+                                [disabled]="!myForm.form.valid">Register</button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
