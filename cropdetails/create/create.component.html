@@ -1,0 +1,174 @@
+
+<div class="header">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">CROP DEAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+             <div class="mx-auto"></div>
+             <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/farmerdashboard',name]">DashBoard</a>
+                </li>
+             </ul>
+            </div>
+        </div>
+    </nav>
+    
+  </div><br>
+<body>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                    <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Crop Form <br><h6>{{msg}}</h6></h3>
+                            <form [formGroup]="createForm"  #myForm="ngForm">
+
+                                <div class="row ">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Crop Name</label>
+                                            <input type="text" min="0" formControlName="cropname" class="form-control">
+                                            <div *ngIf="cropname.invalid &&  cropname.touched">
+                                                <small *ngIf="cropname!.errors!['required']" class="text-danger">Crop
+                                                    Name is required</small>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col ">
+                                        <div class="form-group">
+                                            <label>Crop Image</label>
+                                            <input type="text" formControlName="cropimg" class="form-control">
+                                            <div *ngIf="cropimg.invalid &&  cropimg.touched">
+                                                <small *ngIf="cropimg!.errors!['required']" class="text-danger">Crop
+                                                    Image is required</small>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Crop Type</label>
+                                            <select class="form-control" formControlName="croptype">
+                                                <option value = "vegetable"> Vegetable   
+                                                </option>  
+                                                <option value = "fruits"> Fruits 
+                                                </option>  
+                                                <option value="grains">Grains</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col ">
+                                        <div class="form-group">
+                                            <label>Crop Price</label>
+                                            <input type="number" class="form-control" formControlName="price">
+                                            <div *ngIf="price.invalid &&  price.touched">
+                                                <small *ngIf="price!.errors!['required']" class="text-danger">
+                                                    Price is required</small>
+                                                <small *ngIf="price!.errors!['min']" class="text-danger">please
+                                                        provide valid Price!</small>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Quantity</label>
+                                            <input type="number" class="form-control" formControlName="quantity">
+                                            <div *ngIf="quantity.invalid &&  quantity.touched">
+                                                <small *ngIf="quantity!.errors!['required']" class="text-danger">Quantity
+                                                is required</small>
+                                                <small *ngIf="quantity!.errors!['min']" class="text-danger">please
+                                                    provide valid Quantity!</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Available</label>
+                                            <select class="form-control" formControlName="available">
+                                                <option value = true> Available  
+                                                </option>  
+                                                <option value = false> UnAvailable 
+                                                </option>  
+                                             </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <input type="text" class="form-control" formControlName="description">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control" formControlName="address">
+                                            <div *ngIf="address.invalid &&  address.touched">
+                                                <small *ngIf="address!.errors!['required']" class="text-danger">Address
+                                                     is required</small>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="text" class="form-control" formControlName="contact">
+                                            <div *ngIf="contact.invalid &&  contact.touched">
+                                                <small *ngIf="contact!.errors!['required']" class="text-danger">Farmer
+                                                    Contact is required</small>
+                                            <small *ngIf="contact!.errors!['pattern']" class="text-danger">please
+                                                        provide valid Contact!</small>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Farmer Name</label>
+                                            <input type="text" class="form-control" formControlName="farmerName">
+                                            <div *ngIf="farmerName.invalid && farmerName.touched">
+                                                <small *ngIf="farmerName!.errors!['required']" class="text-danger">Farmer
+                                                    Name is required</small>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><br>
+
+
+
+                                <button class="btn btn-primary" (click)="create()" type="submit" [disabled]="!myForm.form.valid">Create</button>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
