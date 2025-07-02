@@ -1,0 +1,11 @@
+nav {
+    background-color: #092a35;
+    height: 55px;
+}
+.banner-image {
+    background-image: url("/assets/Images/admin3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+}
